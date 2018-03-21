@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div class="index">
+    <div class="nav">
+        <a href="index.html" class="left"><img style="padding-top:20px" src="img/logo.png" alt=""></a>
+        <ul class="right">
+            <li><a href="index.html">主页</a></li>
+            <li><a href="video.html">视频</a></li>
+            <li><a href="forum.html">论坛</a></li>
+            <li style="border-top:3px solid white;"><a href="login.html">登陆</a></li>
+            <li><a href="vip.html">会员</a></li>
+            <li><a href="">活动</a></li>
+            <li><a href="coach.html">教练</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div class="main-top" style="margin-left: 105px;">
+            <div class="main-top-left div-active">注册</div>
+            <div class="main-top-right">登录</div>
+        </div>
+        <!--注册-->
+        <div style="display: block"  class="main-bottom main-bottom-left">
+            <ul>
+                <li>
+                    <input type="text" class="username" name="username" placeholder="设置用户名(4-16位)">
+                    <div>
+                        <p><img src="img/error.png" alt="">该名称不对</p>
+                    </div>
+                </li>
+                <li style="position: relative;">
+                    <input style="width:185px;" type="text" name="email" class="email" placeholder="邮箱">
+                    <a href="javascript:void(0)" style="position:absolute;display: block;width:100px;height:20px;background:#32be60;top:0px;right:20px;-webkit-border-radius:35px;-moz-border-radius:35px;border-radius:35px;font-size:10px;color:white;line-height:20px;text-align: center">发送验证邮件</a>
+                    <hr>
+                    <div>
+                        <p><img src="img/error.png" alt="">邮箱格式不对</p>
+                    </div>
+                </li>
+                <li>
+                    <input type="password" name="password" class="password" placeholder="设置密码">
+                    <div>
+                    <p><img src="img/error.png" alt="">密码要包含大小写字母与数字</p>
+                    </div>
+                </li>
+                <li>
+                    <input type="password" class="checkpassword" placeholder="确认密码">
+                    <div>
+                    <p><img src="img/error.png" alt="">两次密码不一致</p>
+                    </div>
+                </li>
+                <button type="button" id="btn_register">立即注册</button><!--<input type="radio" id="accept" checked><label for="accept" style="font-size:12px;color:#81879c;">我已接受网站服务条款</label>-->
+            </ul>
+        </div>
+        <!--登陆-->
+        <div  class="main-bottom main-bottom-right">
+            <ul>
+                <li>
+                    <input type="text" class="loginUsername check" placeholder="用户名/邮箱">
+                    <div>
+                    <p><img src="img/error.png" alt="">该用户名不存在</p>
+                    </div>
+                </li>
+                <li>
+                    <input type="password" class="loginPassword  check" placeholder="密码">
+                    <div>
+                    <p><img src="img/error.png" alt="">密码错误</p>
+                    </div>
+                </li>
+                <button class="btn-login" type="button">登录</button>
+
+            </ul>
+        </div>
+        <div class="erweima" style="width:100%;overflow: hidden;text-align: center;margin-top:55px;">
+            <img style="width:103px;height:103px;" src="img/erweima.png" alt="">
+            <p>扫描二维码</p>
+            <p>联系客服 升级会员</p>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    $(function(){
+        var height=document.documentElement.clientHeight+'px';
+        $('.index').css('height',height);
+        
+        $('.main-top>div').click(function () {
+            $(this).addClass('div-active').siblings().removeClass('div-active');
+            var num=$(this).index();
+            $('.main-bottom').eq(num).show().siblings('.main-bottom').hide();
+        });
+
+
+        $('#btn_register').click(function () {
+            //check username
+            var username=$("input[name='username']").val();
+            var result=checkUsernameFormat(username);
+            if(!result){
+                $('.main-bottom-left ul li').eq(0).find('p').show();
+            }else {
+                $('.main-bottom-left ul li').eq(0).find('p').hide();
+            };
+
+            //check email`
+            var email=$("input[name='email']").val();
+            var result=checkEmailFormat(email);
+            if(!result){
+                $('.main-bottom-left ul li').eq(1).find('p').show();
+            }else {
+                $('.main-bottom-left ul li').eq(1).find('p').hide();
+            };
+
+            //check email`
+            var password=$("input[name='password']").val();
+            var result=checkPasswordFormat(password);
+            if(!result){
+                $('.main-bottom-left ul li').eq(2).find('p').show();
+            }else {
+                $('.main-bottom-left ul li').eq(2).find('p').hide();
+            };
+
+        });
+        ///doublecheck password
+        $('.checkpassword').blur(function () {
+            var pas=$('.checkpassword').val();
+            var checkpas=$('.password').val();
+            if(pas!=checkpas){
+                $('.main-bottom-left ul li').eq(3).find('p').show();
+            }
+        });
+
+
+        //登录
+        $('.btn-login').click(function () {
+           $('.check').each(function () {
+               if($(this).val()==''){
+                   $(this).siblings('div').children('p').show();
+               }else {
+                   $(this).siblings('div').children('p').hide();
+               }
+           })
+        });
+
+        function checkUsernameFormat(username) {
+            username = $.trim(username);
+            var regular = /^[a-zA-Z0-9_-]{4,16}$/;
+            var result = regular.test(username);
+            return result;
+        }
+
+        function checkEmailFormat(email) {
+            email = $.trim(email);
+            var regular = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+            var result = regular.test(email);
+            return result;
+        }
+        function checkPasswordFormat(password) {
+            password = $.trim(password);
+            var regular = /^[0-9a-zA-Z!@#$^]{6,18}$/;
+            var result = regular.test(password);
+            return result;
+        }
+
+    });
+    window.onresize = function(){
+        var height=document.documentElement.clientHeight+'px';
+        $('.index').css('height',height);
+    };
+</script>
+</body>
+</html>

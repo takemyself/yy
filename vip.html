@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/vip.css">
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+<body>
+<header>
+    <div class="nav">
+        <a href="index.html" class="left"><img style="padding-top:15px;" src="img/logo.png" alt=""></a>
+        <ul class="right">
+            <li><a href="index.html">主页</a></li>
+            <li><a href="video.html">视频</a></li>
+            <li><a href="forum.html">论坛</a></li>
+            <li><a href="login.html">登陆</a></li>
+            <li style="border-top:3px solid white;"><a href="vip.html">会员</a></li>
+            <li><a href="">活动</a></li>
+            <li><a href="coach.html">教练</a></li>
+        </ul>
+    </div>
+    <div style="width:1200px;overflow: hidden;margin: 0 auto">
+        <input class="right" type="text" placeholder="搜索">
+    </div>
+</header>
+<img style="width:100%;height:auto" src="img/vip-index.png" alt="">
+<!--content-->
+<div class="content">
+    <h1>选择套餐</h1>
+    <div class="content-list wow bounceInLeft">
+        <h3>一级VIP</h3>
+        <p>一级VIP描述一级VIP描述
+            一级VIP描述一级VIP描述
+            一级VIP描述一级VIP描述
+            一级VIP描述一级VIP描述</p>
+        <div style="border-bottom:1px solid #ebebeb;padding-bottom:30px;"></div>
+        <h3>¥ 299元</h3>
+        <a href="javascript:void(0)">立即购买</a>
+    </div>
+    <div class="content-list wow bounceInDown ">
+        <h3>二级VIP</h3>
+        <p>二级VIP描述二级VIP描述
+            二级VIP描述二级VIP描述
+            二级VIP描述二级VIP描述
+            二级VIP描述二级VIP描述</p>
+        <div style="border-bottom:1px solid #ebebeb;padding-bottom:30px;"></div>
+        <h3>¥ 499元</h3>
+        <a href="javascript:void(0)">立即购买</a>
+    </div>
+    <div class="content-list  wow bounceInRight">
+        <h3>三级VIP</h3>
+        <p>三级VIP描述三级VIP描述
+            三级VIP描述三级VIP描述
+            三级VIP描述三级VIP描述
+            三级VIP描述三级VIP描述</p>
+        <div style="border-bottom:1px solid #ebebeb;padding-bottom:30px;"></div>
+        <h3>¥ 699元</h3>
+        <a href="javascript:void(0)">立即购买</a>
+    </div>
+</div>
+<!--模态框-->
+<div class="motai">
+    <div style="position:relative;width:100%;height:100%;">
+        <div style="position:relative;top:50%;left:50%;width: 200px;height: 258px;margin-left: -100px;    margin-top: -129px;">
+            <img src="img/erweima.png" alt="">
+            <p style="margin-left: 20px;margin-top:10px;">扫描二维码</p>
+            <p style="margin-left: -20px;">联系客服升级会员</p>
+        </div>
+    </div>
+</div>
+<!--join-->
+<div class="join">
+    <b>立即成为会员</b>
+    <a href="vip.html">加入我们</a>
+</div>
+<footer>
+    <ul>
+        <li>免责声明</li>
+        <li>商务合作</li>
+        <li>关于我们</li>
+        <li>沪|CP备08019179号-3</li>
+        <li>© 2018 YY版权所有</li>
+    </ul>
+</footer>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+
+    $(function(){
+       $('.content-list a').click(function () {
+            $('.motai').fadeIn();
+       });
+    });
+    $('.motai').click(function () {
+        $('.motai').fadeOut();
+    });
+
+
+</script>
+</body>
+</html>

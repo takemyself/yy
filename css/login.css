@@ -1,0 +1,174 @@
+html{
+    min-width:1200px;
+}
+.index{
+    width:100%;
+    height:768px;
+    background-image: url("../img/login.png");
+    background-size: 100% 100%;
+}
+
+.nav{
+    width:1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.nav ul{
+    width:350px;
+}
+.nav ul li{
+    float: left;
+    width:28px;
+    height:56px;
+    border-top:3px solid transparent;
+    margin-left:22px;
+}
+.nav ul li:hover{
+    border-top:3px solid white;
+}
+.nav ul li a{
+    color:white;
+    font-size:11px;
+    line-height:95px;
+}
+
+
+.main{
+    width: 400px;
+    overflow: hidden;
+    margin-left: 160px;
+    margin-top: 180px;
+}
+.main-top-left,.main-top-right{
+    width:100px;
+    height:40px;
+    border:1px solid #32be60;
+    -webkit-border-radius:35px;
+    -moz-border-radius:35px;
+    border-radius:35px;
+    float: left;
+    color:black;
+    font-size:18px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.div-active{
+    background:#32be60;
+    color:white;
+}
+.main-top-left{
+    border-top-right-radius:0px;
+    border-bottom-right-radius:0px;
+}
+.main-top-right{
+    border-top-left-radius:0px;
+    border-bottom-left-radius:0px;
+}
+/****注册***/
+.main-bottom{
+    width:310px;
+    overflow: hidden;
+    margin-left: 104px;
+    height: 325px;
+    display: none;
+}
+.main-bottom-left ul li{
+    margin-top:10px;
+}
+.main-bottom-left ul li input{
+    width:301px;
+    height:30px;
+    border:none;
+    border-bottom:1px solid black;
+    background: none;
+    padding-left:44px;
+    font-size:12px;
+    color:black;
+}
+.main-bottom-left ul li hr{
+     background: none;
+     border: none;
+     border-top: 1px solid black;
+     position: absolute;
+     width: 112px;
+     top: 29px;
+     right: 13px;
+ }
+.main-bottom-left ul li input::placeholder{
+    color:black;
+}
+.main-bottom-left ul li .username{
+     background: url("../img/username.png") no-repeat;
+     background-position: 15px;
+ }
+.main-bottom-left ul li .email{
+    background: url("../img/email.png") no-repeat;
+    background-position: 15px;
+}
+.main-bottom-left ul li .password{
+    background: url("../img/password.png") no-repeat;
+    background-position: 15px;
+}
+.main-bottom-left ul li .checkpassword{
+    background: url("../img/checkpassword.png") no-repeat;
+    background-position: 15px;
+}
+.main-bottom ul li div{
+    height:22px;
+}
+.main-bottom ul li p{
+    font-size: 12px;
+    color: #ff5d45;
+    padding-left: 14px;
+    padding-top: 4px;
+    display: none;
+}
+.main-bottom ul li p img{
+    position: relative;
+    top: 2px;
+    margin-right:10px;
+}
+.main-bottom button{
+    margin-top: 35px;
+    border: none;
+    background: #32be60;
+    width: 160px;
+    height: 40px;
+    border-radius: 35px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+.main-bottom button:hover{
+    background: #0bd6a4;
+}
+/***登陆**/
+.main-bottom-right ul li{
+    margin-top:50px;
+}
+.main-bottom-right ul li input{
+    width:301px;
+    height:30px;
+    border:none;
+    border-bottom:1px solid black;
+    background: none;
+    padding-left:44px;
+    font-size:12px;
+    color:black;
+}
+.main-bottom-right ul li input::placeholder{
+    color:black;
+}
+.main-bottom-right ul li .loginUsername{
+    background: url("../img/username.png") no-repeat;
+    background-position: 15px;
+}
+.main-bottom-right ul li .loginPassword{
+    background: url("../img/password.png") no-repeat;
+    background-position: 15px;
+}
+.erweima p{
+    font-size:14px;
+    color:#476470;
+}
